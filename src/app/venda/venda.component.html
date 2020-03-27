@@ -1,0 +1,47 @@
+<app-layout>
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-12">
+                    <h5>Venda</h5>
+                    <label>Cliente</label>
+                    <select [(ngModel)]="venda.cliente" class="form-control">
+                        <option [ngValue]="null">Selecione</option>
+                        <option *ngFor="let cliente of listaCliente" [ngValue]="cliente">{{cliente.nome}}</option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-primary my-2" (click)="pesquisar()">Pesquisar</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Codigo</th>
+                                <th>Nome</th>
+                                <th>Data</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let venda of listaVenda">
+                                <th><input type="radio" name="selecionado" (change)="selecionar(venda)" /></th>
+                                <th>{{venda.codigo}}</th>
+                                <td>{{venda.cliente.nome}}</td>
+                                <td>{{venda.data | date: 'dd/MM/yyyy' }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <button class="btn btn-primary" (click)="incluir()">Incluir</button>
+                    <button class="btn btn-primary ml-2" (click)="excluir()">Excluir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</app-layout>

@@ -1,0 +1,45 @@
+<app-layout>
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-12">
+                    <h5>Produto</h5>
+                    <label>Nome:</label>
+                    <input type="text" class="form-control" [(ngModel)]="produto.nome">
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-primary my-2" (click)="pesquisar()">Pesquisar</button>
+                </div>
+                <div class="col-12">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Codigo</th>
+                                <th>Nome</th>
+                                <th>Descrição</th>
+                                <th>Valor</th>
+                                <th>Observação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let produto of listaProduto">
+                                <td><input type="radio" name="selecionado" (change)="selecionar(produto)"></td>
+                                <td>{{produto.codigo}}</td>
+                                <td>{{produto.nome}}</td>
+                                <td>{{produto.descricao}}</td>
+                                <td>{{produto.valor}}</td>
+                                <td>{{produto.observacao}}</td>
+                            </tr>      
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-primary" (click)="incluir()">Incluir</button>
+                    <button class="btn btn-primary mx-2" (click)="alterar()">Alterar</button>
+                    <button class="btn btn-primary" (click)="excluir()"> Excluir </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</app-layout>

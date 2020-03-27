@@ -1,0 +1,28 @@
+<app-layout>
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-12">
+                    <h5>Cliente - {{operador}}</h5>
+                    <label>Nome</label>
+                    <input class="form-control" type="text" [(ngModel)]="cliente.nome">
+                    <label>Endereço</label>
+                    <input class="form-control" type="text" [(ngModel)]="cliente.endereco">
+                    <label>Cidade</label>
+                    <input type="text" class="form-control" [(ngModel)]="cliente.cidade">
+                    <label>Cep</label>
+                    <input type="text" class="form-control" [(ngModel)]="cliente.cep">
+                    <label>UF</label>
+                    <input type="text" class="form-control" [(ngModel)]="cliente.uf">
+                    <label>Telefone</label>
+                    <input type="text" class="form-control" [(ngModel)]="cliente.telefone">
+                </div>
+                <div class="col-12 mt-2">
+                    <button class="btn btn-primary" *ngIf="operador == 'Incluir'" (click)="incluir()">Incluir</button>
+                    <button class="btn btn-primary" *ngIf="operador == 'Alterar'" (click)="alterar()">Alterar</button>
+                    <button class="btn btn-primary mx-2" (click)="voltar()">Voltar</button>                  
+                </div>
+            </div>
+        </div>
+    </div>
+</app-layout>

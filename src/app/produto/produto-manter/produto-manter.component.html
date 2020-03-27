@@ -1,0 +1,25 @@
+<app-layout>
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-12">
+                    <h5>Produto - {{operador}}</h5>
+                    <label>Nome</label>
+                    <input type="text" class="form-control" [(ngModel)]="produto.nome">
+                    <label>Descrição</label>
+                    <input type="text" class="form-control" [(ngModel)]="produto.descricao">
+                    <label>Valor</label>
+                    <input type="text" class="form-control" [(ngModel)]="produto.valor">
+                    <label>Observação</label>
+                    <input type="text" class="form-control" [(ngModel)]="produto.observacao">
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-primary mt-2" (click)="incluir()" *ngIf="operador == 'Incluir'">Incluir</button>
+                    <button class="btn btn-primary mt-2" (click)="alterar()" *ngIf="operador == 'Alterar'">Alterar</button>
+                    <button class="btn btn-primary mt-2 ml-2" (click)="voltar()">Voltar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</app-layout>
